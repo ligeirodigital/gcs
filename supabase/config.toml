@@ -1,0 +1,12 @@
+project_id = "gcs"
+
+# Endpoints públicos (sem JWT): validação, limite de requisições e anti-spam ficam dentro das funções.
+[functions.track]
+verify_jwt = false
+
+[functions.submit-form]
+verify_jwt = false
+
+# Assistente de IA: exige JWT do usuário (verificado também dentro da função, com checagem de papel no banco).
+[functions.ai-generate]
+verify_jwt = true
